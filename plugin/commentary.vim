@@ -80,13 +80,16 @@ nnoremap <silent> <Plug>ChangeCommentary c:<C-U>call <SID>textobject(1)<CR>
 nmap <silent> <Plug>CommentaryUndo <Plug>Commentary<Plug>Commentary
 command! -range -bar Commentary call s:go(<line1>,<line2>)
 
-if !hasmapto('<Plug>Commentary') || maparg('gc','n') ==# ''
+imap <C-\> <ESC><Plug>Commentary_i
+
+if 1 || !hasmapto('<Plug>Commentary') || maparg('gc','n') ==# ''
   xmap gc  <Plug>Commentary
   nmap gc  <Plug>Commentary
   omap gc  <Plug>Commentary
   nmap gcc <Plug>CommentaryLine
   nmap cgc <Plug>ChangeCommentary
   nmap gcu <Plug>Commentary<Plug>Commentary
+  nmap <C-\> <Plug>Commentary_
 endif
 
 if maparg('\\','n') ==# '' && maparg('\','n') ==# '' && get(g:, 'commentary_map_backslash', 1)
