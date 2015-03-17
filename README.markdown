@@ -1,4 +1,8 @@
-# commentary.vim
+# My copy of commentary.vim
+
+##Changed stuff:
+Comment hotkey for all modes added: <C-\>
+
 
 Comment stuff out.  Use `gcc` to comment out a line (takes a count),
 `gc` to comment out the target of a motion (for example, `gcap` to
